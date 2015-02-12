@@ -1,0 +1,34 @@
+-if user_signed_in?
+  =link_to destroy_user_session_path do
+    Sign Out
+  %br/
+.container
+  .header
+    %nav
+      %ul.nav.nav-pills.pull-right
+        %i.btn.btn-default
+          = link_to root_path do
+            %span.glyphicon.glyphicon-home
+        %i.btn.btn-default
+          2nd link
+    %h3.text-muted FindMe
+  .jumbotron
+    %h1 FindMe
+    %p.lead This was created to help employers find ruby rails engineers looking for work.
+    %p
+      %i.btn.btn-default
+        =link_to new_user_registration_path do
+          Sign up Today
+  .row.marketing
+    .col-lg-6
+      %h4 Portfolio
+      %p Show off your portfolio.
+      %h4 Resume
+      %p Present your resume amongst future employers.
+      %h4 About
+      %p Tell us about yourself.
+    .col-lg-6
+      %h4 Friends list
+      %p Connect with other programmers.
+      %h4 Forum
+      %p Host and join discussions about ruby rails engineering. Help out your peers if need be.
