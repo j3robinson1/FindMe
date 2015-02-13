@@ -6,11 +6,12 @@
   .header
     %nav
       %ul.nav.nav-pills.pull-right
-        %i.btn.btn-default
+        %i.btn.btn-default.navl
           = link_to root_path do
             %span.glyphicon.glyphicon-home
-        %i.btn.btn-default
-          2nd link
+        %i.btn.btn-default.navl
+          = link_to new_user_session_path do
+            Sign in
     %h3.text-muted FindMe
   .jumbotron
     %h1 FindMe

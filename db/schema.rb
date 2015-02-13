@@ -14,7 +14,6 @@
 ActiveRecord::Schema.define(version: 20150212181346) do
 
   create_table "portfolios", force: :cascade do |t|
-    t.string   "github",      limit: 255
     t.string   "name",        limit: 255
     t.string   "description", limit: 255
     t.datetime "created_at",              null: false
