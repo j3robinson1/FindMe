@@ -4,15 +4,21 @@ body {
 .jumbotron {
   background-color: #C5DEDA;
 }
-.btn.btn-default.navl {
+.btn.btn-default.navl, .btn.btn-default.links {
   background-color: #EDDDDD;
 }
-.btn.btn-default.navl:hover {
+.btn.btn-default.navl:hover, .btn.btn-default.links:hover {
   background-color: #E3D1D1;
 }
-.btn.btn-default {
+.btn.btn-default.green {
   background-color: #83F795;
 }
-.btn.btn-default:hover {
+.btn.btn-default.green:hover {
   background-color: #73DE83;
+}
+.dropdown-menu {
+  text-align: center;
+}
+.jumbotron.forum {
+  text-align:center;
 }

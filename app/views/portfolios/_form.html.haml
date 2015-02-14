@@ -1,8 +1,8 @@
 = form_for [current_user, @portfolio] do |f|
   = f.label :name
-  = f.text_area :name
+  = f.text_field :name
   %br
   = f.label :description
-  = f.date_field :description
+  = f.text_area :description
   %br
   = f.submit

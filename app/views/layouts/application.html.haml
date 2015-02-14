@@ -9,4 +9,64 @@
         = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
         = csrf_meta_tags
   %body
+    -if user_signed_in?
+      //navbar   
+      .masthead
+        %h3.text-muted FindMe
+        %nav
+          %ul.nav.nav-justified
+            %li.active
+              = link_to root_path do
+                %span.glyphicon.glyphicon-home
+            %li
+              = link_to user_portfolios_path(current_user) do
+                Portfolio
+            %li
+              %a{:href => "#"} Resume
+            %li
+              %a{:href => "#"} About
+            %li
+              %a{:href => "#"} Forum
+            %li#fat-menu.dropdown
+              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                Account
+                %b.caret
+              %ul.dropdown-menu
+                %li= link_to "Profile", edit_user_registration_path
+                %li= link_to "Settings", '#'
+                %li.divider
+                %li
+                  = link_to "Logout", destroy_user_session_path, :method => :delete
+    -else
+      .container
+        .header
+          %nav
+            %ul.nav.nav-pills.pull-right
+              %i.btn.btn-default.navl
+                = link_to root_path do
+                  %span.glyphicon.glyphicon-home
+              %i.btn.btn-default.navl
+                = link_to new_user_session_path do
+                  Sign in
+          %h3.text-muted FindMe
+        .jumbotron
+          %h1 FindMe
+          %p.lead This was created to help employers find ruby rails engineers looking for work.
+          %p
+            %i.btn.btn-default.green
+              =link_to new_user_registration_path do
+                Sign up Today
+        .row.marketing
+          .col-lg-6
+            %h4 Portfolio
+            %p Show off your portfolio.
+            %h4 Resume
+            %p Present your resume amongst future employers.
+            %h4 About
+            %p Tell us about yourself.
+          .col-lg-6
+            %h4 Friends list
+            %p Connect with other programmers.
+            %h4 Forum
+            %p Host and join discussions about ruby rails engineering. Help out your peers if need be.
     = yield
