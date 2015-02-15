@@ -22,9 +22,11 @@
               = link_to user_portfolios_path(current_user) do
                 Portfolio
             %li
-              %a{:href => "#"} Resume
+              = link_to user_resumes_path(current_user) do
+                Resume
             %li
-              %a{:href => "#"} About
+              = link_to user_abouts_path(current_user) do
+                About
             %li
               %a{:href => "#"} Forum
             %li#fat-menu.dropdown
@@ -37,6 +39,7 @@
                 %li.divider
                 %li
                   = link_to "Logout", destroy_user_session_path, :method => :delete
+      = yield
     -else
       .container
         .header
@@ -56,6 +59,9 @@
             %i.btn.btn-default.green
               =link_to new_user_registration_path do
                 Sign up Today
+          %i.y
+            = yield
+            %br
         .row.marketing
           .col-lg-6
             %h4 Portfolio
@@ -69,4 +75,3 @@
             %p Connect with other programmers.
             %h4 Forum
             %p Host and join discussions about ruby rails engineering. Help out your peers if need be.
-    = yield

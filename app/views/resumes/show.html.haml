@@ -1,0 +1,12 @@
+%h1 resume
+%h3
+  Name: #{@resume.title}
+  %br
+  Description: #{@resume.description}
+  %br
+  = link_to edit_user_resume_path(@user, @resume) do
+    %i.btn.btn-default
+      %span.glyphicon.glyphicon-edit{class: 'glyph'}
+  = link_to user_resume_path(@user, @resume), method: :delete do
+    %i.btn.btn-default
+      %span.glyphicon.glyphicon-trash{class: 'glyph'}

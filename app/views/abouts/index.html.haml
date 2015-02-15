@@ -1,0 +1,9 @@
+.btn.btn-default.green
+  = link_to new_user_about_path do
+    Add to your about
+%br
+- @abouts.each do |about|
+  .btn.btn-default
+    =link_to user_about_path(current_user, about) do
+      =about.description
+  %br

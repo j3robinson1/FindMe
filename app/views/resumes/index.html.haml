@@ -1,0 +1,9 @@
+.btn.btn-default.green
+  = link_to new_user_resume_path do
+    Add to your resume
+%br
+- @resumes.each do |resume|
+  .btn.btn-default
+    =link_to user_resume_path(current_user, resume) do
+      =resume.title
+  %br

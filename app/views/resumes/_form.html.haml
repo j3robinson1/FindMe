@@ -1,0 +1,14 @@
+= form_for [current_user, @resume] do |f|
+  = f.label :title
+  = f.text_field :title
+  %br
+  = f.label :start_date
+  = f.date_field :start_date
+  %br
+  = f.label :end_date
+  = f.date_field :end_date
+  %br
+  = f.label :description
+  = f.text_area :description
+  %br
+  = f.submit
