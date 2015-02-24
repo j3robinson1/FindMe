@@ -24,7 +24,7 @@ class PostAttachmentsController < ApplicationController
   # POST /post_attachments
   # POST /post_attachments.json
   def create
-    @post_attachment = PostAttachment.new(post_attachment_params)
+    @post_attachment = @post.post_attachments.build(post_attachment_params)
 
     respond_to do |format|
       if @post_attachment.save
