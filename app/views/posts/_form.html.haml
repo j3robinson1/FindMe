@@ -1,0 +1,12 @@
+= form_for(user_posts_path(@user), :html => { :multipart => true }) do |f|
+  .field
+    = f.label :title
+    %br/
+    = f.text_field :title
+  = f.fields_for :post_attachments do |p|
+    .field
+      = p.label :avatar
+      %br/
+      = p.file_field :avatar, :multiple => true, name: "post_attachments[avatar][]"
+  .actions
+    = f.submit

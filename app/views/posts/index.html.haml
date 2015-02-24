@@ -1,0 +1,21 @@
+%h1 Listing portfolio peices
+
+%table
+  %thead
+    %tr
+      %th Title
+      %th
+      %th
+      %th
+      
+  %tbody
+    - @posts.each do |post|
+      %tr
+        %td= post.title
+        %td= link_to 'Show', user_post_path(@user, post)
+        %td= link_to 'Edit', edit_user_post_path(@user, post)
+        %td= link_to 'Destroy', user_post_path(post), :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Post', new_user_post_path(@user)

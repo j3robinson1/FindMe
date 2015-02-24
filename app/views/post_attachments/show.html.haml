@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Post:
+  = @post_attachment.post_id
+%p
+  %b Avatar:
+  = @post_attachment.avatar
+
+= link_to 'Edit', edit_user_post_attachment_path(@user, @post_attachment)
+\|
+= link_to 'Back', user_post_attachments_path(@user)

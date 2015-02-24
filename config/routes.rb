@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users 
   resources 'user', only: []do
-    resources 'portfolios'
+    resources :posts
+    resources :post_attachments
     resources 'resumes'
     resources 'abouts'
   end
