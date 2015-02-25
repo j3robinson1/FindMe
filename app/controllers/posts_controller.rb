@@ -1,15 +1,16 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
-  # GET /posts
-  # GET /posts.json
+  # GET user/user_id/posts
+  # GET user/user_id/posts.json
   def index
     @user = current_user
+    @users = User.all
     @posts = Post.all
   end
 
-  # GET /posts/1
-  # GET /posts/1.json
+  # GET user/user_id/posts/1
+  # GET user/user_id/posts/1.json
   def show
     @user = current_user
     @users = User.all
@@ -25,24 +26,24 @@ def new
 end
 
 def create
-  @user = current_user
-    @users = User.all
-   @post = @user.posts.build(post_params)
+   @user = current_user
+   @users = User.all
+   @post = @user.posts.create!(post_params)
 
    respond_to do |format|
      if @post.save
        params[:post_attachments]['avatar'].each do |a|
           @post_attachment = @post.post_attachments.create!(:avatar => a, :post_id => @post.id)
-       end
+         end
        format.html { redirect_to user_posts_path(@user), notice: 'Post was successfully created.' }
      else
        format.html { render action: 'new' }
      end
    end
- end
+end
 
-  # PATCH/PUT /posts/1
-  # PATCH/PUT /posts/1.json
+  # PATCH/PUT user/user_id/posts/1
+  # PATCH/PUT user/user_id/posts/1.json
   def update
     @users = User.all
     respond_to do |format|
@@ -56,8 +57,8 @@ def create
     end
   end
 
-  # DELETE /posts/1
-  # DELETE /posts/1.json
+  # DELETE user/user_id/posts/1
+  # DELETE user/user_id/posts/1.json
   def destroy
 
     @post.destroy

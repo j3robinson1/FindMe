@@ -1,9 +1,0 @@
-.btn.btn-default.green
-  = link_to new_user_portfolio_path do
-    Add to your portfolio
-%br
-- @portfolios.each do |portfolio|
-  .btn.btn-default
-    =link_to user_portfolio_path(current_user, portfolio) do
-      =portfolio.name
-  %br

@@ -1,4 +1,4 @@
-class ResumesController < ApplicationControllerclass resumesController < ApplicationController
+class ResumesController < ApplicationController
   def index
     @user = current_user
     if !params[:search].blank?

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources 'user', only: []do
     resources :posts
     resources :post_attachments
-    resources 'resumes'
+    resources :resumes
     resources 'abouts'
   end
   # The priority is based upon order of creation: first created -> highest priority.

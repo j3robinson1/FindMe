@@ -1,28 +1,28 @@
 class PostAttachmentsController < ApplicationController
   before_action :set_post_attachment, only: [:show, :edit, :create, :new, :update, :destroy]
 
-  # GET /post_attachments
-  # GET /post_attachments.json
+  # GET user/user_id/post_attachments
+  # GET user/user_id/post_attachments.json
   def index
     @post_attachments = PostAttachment.all
   end
 
-  # GET /post_attachments/1
-  # GET /post_attachments/1.json
+  # GET user/user_id/post_attachments/1
+  # GET user/user_id/post_attachments/1.json
   def show
   end
 
-  # GET /post_attachments/new
+  # GET user/user_id/post_attachments/new
   def new
     @post_attachment = PostAttachment.new
   end
 
-  # GET /post_attachments/1/edit
+  # GET user/user_id/post_attachments/1/edit
   def edit
   end
 
-  # POST /post_attachments
-  # POST /post_attachments.json
+  # POST user/user_id/post_attachments
+  # POST user/user_id/post_attachments.json
   def create
     @post_attachment = @post.post_attachments.build(post_attachment_params)
 
@@ -37,8 +37,8 @@ class PostAttachmentsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /post_attachments/1
-  # PATCH/PUT /post_attachments/1.json
+  # PATCH/PUT user/user_id/post_attachments/1
+  # PATCH/PUT user/user_id/post_attachments/1.json
   def update
     @users = User.all
   respond_to do |format|
@@ -48,8 +48,8 @@ class PostAttachmentsController < ApplicationController
   end
 end
 
-  # DELETE /post_attachments/1
-  # DELETE /post_attachments/1.json
+  # DELETE user/user_id/post_attachments/1
+  # DELETE user/user_id/post_attachments/1.json
   def destroy
     @post_attachment.destroy
     respond_to do |format|
