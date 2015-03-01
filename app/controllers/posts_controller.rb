@@ -27,9 +27,7 @@ end
 
 def create
    @user = current_user
-   @users = User.all
-   @post = @user.posts.create!(post_params)
-
+   @post = @user.create_post(post_params)
    respond_to do |format|
      if @post.save
        params[:post_attachments]['avatar'].each do |a|
@@ -75,7 +73,6 @@ end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    private
    def post_params
       params.require(:post).permit(:title, post_attachments_attributes: [:id, :post_id, :avatar])
    end
