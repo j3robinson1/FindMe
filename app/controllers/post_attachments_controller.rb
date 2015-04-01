@@ -25,7 +25,6 @@ class PostAttachmentsController < ApplicationController
   # POST user/user_id/post_attachments.json
   def create
     @post_attachment = @post.post_attachments.build(post_attachment_params)
-
     respond_to do |format|
       if @post_attachment.save
         format.html { redirect_to @post_attachment, notice: 'Post attachment was successfully created.' }

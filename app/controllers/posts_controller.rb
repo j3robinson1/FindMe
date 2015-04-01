@@ -27,9 +27,11 @@ end
 
 def create
    @user = current_user
-   @post = @user.posts.create(post_params)
+   @post = Post.create!(post_params)
    respond_to do |format|
      if @post.save
+      @post.user_id = current_user
+      @post.save
        params[:post_attachments]['avatar'].each do |a|
           @post_attachment = @post.post_attachments.create!(:avatar => a, :post_id => @post.id)
          end
@@ -58,7 +60,6 @@ end
   # DELETE user/user_id/posts/1
   # DELETE user/user_id/posts/1.json
   def destroy
-
     @post.destroy
     respond_to do |format|
       format.html { redirect_to user_posts_url, notice: 'Post was successfully destroyed.' }

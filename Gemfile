@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
-
 gem 'carrierwave'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'factory_girl'
 gem 'rails', '4.2.0'
 # Change sqlite to mysql2
 gem 'mysql2'
@@ -37,6 +37,7 @@ end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'rspec-rails'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'

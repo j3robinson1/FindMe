@@ -15,7 +15,6 @@
         %td= post_attachment.post_id
         %td= post_attachment.avatar
         %td= link_to 'Show', user_post_attachment_path(@user)
-        %td= link_to 'Edit', edit_user_post_attachment_path(@user, post_attachment)
         %td= link_to 'Destroy', user_post_attachment(@user), :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br

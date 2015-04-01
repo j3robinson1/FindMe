@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users 
   resources 'user', only: []do
-    resources :posts
-    resources :post_attachments
+    resources :posts do
+      resources :post_attachments
+    end
     resources :resumes
     resources 'abouts'
   end

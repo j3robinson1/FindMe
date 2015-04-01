@@ -4,7 +4,4 @@
   = @post.title
 - @post_attachments.each do |p|
   = image_tag p.avatar_url
-  = link_to "Edit Attachment", edit_user_post_attachment_path(@user, p)
-= link_to 'Edit', edit_user_post_path(@user, @post)
-|
 \#{link_to 'Back', user_posts_path(@user)}
